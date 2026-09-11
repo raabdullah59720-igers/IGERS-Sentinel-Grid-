@@ -1,35 +1,41 @@
-# IGERS-BD-01 Earthquake Alert Update
+# IGERS-BD-01 Professional Live Monitoring Update
 
-Professional earthquake-monitoring update for the existing IGERS-BD-01 web app.
+This package updates the existing IGERS-BD-01 website without replacing its existing concept, time, weather, environmental-intelligence or earthquake-monitoring sections.
 
-## Included
-- Existing IGERS website preserved.
-- Live USGS past-hour GeoJSON earthquake feed.
-- Asia-region presentation filter.
-- 30-second polling while the page is visible.
-- 90-second polling while the page is backgrounded, with an immediate refresh when the page becomes visible again.
-- 12-second feed timeout so a stalled request does not hang the interface.
-- Live feed state and last successful sync timestamp.
-- Browser notification permission flow.
-- M2.5+, M4.5+, M5.0+ and Significant alert thresholds.
-- Duplicate earthquake suppression with localStorage.
-- Initial-feed priming so old events do not generate a burst of alerts.
-- Test notification button.
-- Service worker notification click handling.
-- PWA manifest and icon.
+## Added in this update
+- Live air-traffic section inside the existing Environmental / monitoring experience.
+- Leaflet interactive map with OpenStreetMap basemap.
+- ADS-B-derived aircraft positions through Airplanes.live when the provider is reachable.
+- Bangladesh-centered regional view with a 250 nautical-mile monitoring radius.
+- Aircraft count, position-bearing target count and newest-data age.
+- Aircraft markers with heading/track rotation.
+- Clickable aircraft markers and a live aircraft list.
+- Selected-aircraft panel with callsign/hex, registration when available, type, altitude, speed, track and position.
+- 20-second foreground refresh and 60-second background refresh, with immediate refresh when the page becomes visible.
+- Live connection state and last-sync indicator.
+- No fabricated aircraft positions: if the provider is unavailable, the panel reports the feed as offline.
 
-## Important delivery behavior
-USGS real-time feeds are updated on a regular cadence, so this interface is designed for prompt monitoring rather than second-level seismic warning. Browser foreground/background execution can also be throttled by the operating system or browser. The included service worker handles notifications and clicks, but it does not pretend to be a background earthquake server.
+## Existing features preserved
+- IGERS-BD-01 conceptual engineering sections.
+- Bangladesh deployment concepts.
+- Live Bangladesh/local/world time.
+- Open-Meteo weather panel.
+- Environmental intelligence dashboard.
+- USGS Asia-region earthquake feed.
+- Browser earthquake alerts, thresholds, test notification and service-worker notification handling.
 
-For true push delivery while the browser is completely closed, deploy a server-side Web Push watcher that polls the USGS feed, stores Web Push subscriptions and sends VAPID-authenticated pushes when a new qualifying event appears. A static GitHub Pages deployment alone cannot provide that always-on server process.
+## Data / deployment note
+The air-traffic layer is an ADS-B-derived live-data integration. Coverage depends on receiver/network visibility, so it should not be presented as a complete air-traffic-control picture. Airplanes.live provides live tracking and API documentation on its official site.
+
+For operational, commercial or mission-critical use, review the provider's current terms, API policy and licensing requirements before deployment.
+
+The map uses Leaflet and OpenStreetMap tiles. Internet access is required for live map tiles and the aircraft data feed. The rest of the website remains usable if the aircraft provider is unavailable.
 
 ## Deployment
-1. Upload/extract the contents of this folder to the same location as the existing website.
-2. Serve over HTTPS in production. `localhost` is suitable for development.
-3. Open the site and press **Enable alerts**.
-4. Choose the magnitude threshold.
-5. Press **Test** to verify the browser notification channel.
-6. Keep browser/device notification permission enabled.
+1. Extract the package and upload the contents of `igers_site_build` to the same website location.
+2. Keep HTTPS enabled in production.
+3. Open the site and scroll to **Live air traffic**.
+4. The map and aircraft data will populate automatically when the external feeds are reachable.
 
-## Source
-Earthquake event data is pulled directly from the USGS real-time GeoJSON feed in the browser.
+## Important realism note
+The browser cannot guarantee uninterrupted live coverage. Provider outages, network failure, browser throttling, regional receiver coverage and API policy can affect updates. This implementation intentionally shows connection and last-sync state instead of inventing data.
