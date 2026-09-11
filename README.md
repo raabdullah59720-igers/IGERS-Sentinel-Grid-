@@ -1,41 +1,22 @@
 # IGERS-BD-01
 
-**Integrated Gradient-Based Energy Recovery and Storage System**
+**Integrated Gradient-Based Energy Recovery and Storage System**  
+**Inventor & Author:** Abdullah Al Rafi [BD]  
+**Concept / Invention Date:** 14 August 2026
 
-Inventor & Author: **Abdullah Al Rafi[BD]**  
-Concept / Invention Date: **14 August 2026**
+## Run immediately
+This version is a dependency-free static website. You do **not** need Node.js, npm, React, or Vite.
 
-A professional conceptual web-app front end for the IGERS-BD-01 project. It deliberately avoids locking the identity to a single turbine or water-only implementation. The site presents IGERS as a modular energy-recovery and storage platform with example deployment models.
+### On your computer
+1. Extract the ZIP.
+2. Open `index.html` in Chrome/Edge/Firefox.
 
-## Run locally
+### On GitHub Pages
+1. Create a GitHub repository.
+2. Upload `index.html` and `README.md`.
+3. Go to **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Select `main` and `/ (root)`, then Save.
+6. GitHub will provide the live website link.
 
-```bash
-npm install
-npm run dev
-```
-
-Then open the local Vite address shown in the terminal.
-
-## Production build
-
-```bash
-npm run build
-npm run preview
-```
-
-## GitHub Pages / deployment
-
-This is a Vite + React project. It can be deployed with GitHub Actions, Vercel, Netlify, or another static host that supports Vite builds.
-
-## Replace placeholders later
-
-The conceptual system graphic is CSS-generated, so no image assets are required. Later, you can add:
-
-- 3D prototype renders
-- engineering drawings
-- simulation outputs
-- measured energy data
-- project logo
-- field photographs
-
-Place assets under `public/` and update the relevant React component.
+The site is intentionally image-free and presents IGERS as a modular engineering concept rather than a water-turbine-only website. Future 3D renders, diagrams, simulations, measured data, and official branding can be added later.
