@@ -27,15 +27,12 @@ section{padding:72px 0}.section-head{display:flex;justify-content:space-between;
 .alert-box{margin-top:16px;border:1px solid #66533a;background:linear-gradient(145deg,#231a0d,#0e1114);border-radius:18px;padding:15px}.alert-box.clear{border-color:#2b5547;background:linear-gradient(145deg,#0c2019,#07110e)}.alert-box.attention{border-color:#6f5b34;background:linear-gradient(145deg,#231d0d,#11100a)}.alert-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.alert-badge{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ffd37a}.clear .alert-badge{color:var(--green)}.alert-main{font-size:14px;font-weight:750;margin-top:7px}.alert-meta{color:var(--muted);font-size:10px;margin-top:4px}.eq-list{margin-top:12px;display:grid;gap:8px}.eq-item{display:flex;justify-content:space-between;gap:8px;align-items:center;border-top:1px solid #1a2a32;padding-top:8px;font-size:10px}.eq-mag{font-weight:850;color:#ffd37a}.eq-place{color:var(--muted);text-align:right}.source-note{margin-top:8px;color:#718896;font-size:9px}.env-status{margin-top:12px;font-size:10px;color:var(--muted)}
 @media(max-width:950px){.env-dashboard{grid-template-columns:1fr}.radar-scope{width:240px;height:240px}}
 
-
-.live-card{min-height:150px}.live-card-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.live-card h3{font-size:25px;letter-spacing:.02em;margin:3px 0}.live-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid #2e5f6d;border-radius:999px;color:var(--green);font-size:9px;letter-spacing:.12em;font-weight:800;white-space:nowrap}.live-card p{margin-top:8px}
 </style>
 </head>
 <body>
 <nav class="nav"><div class="wrap navin"><a href="#home" class="brand">IGERS-BD-01<small>INTEGRATED ENERGY RECOVERY &amp; STORAGE</small></a><div class="navlinks"><a href="#concept">Concept</a><a href="#energy">Energy</a><a href="#journey">Journey</a><a href="#environment">Environment</a><a href="#applications">Applications</a><a href="#sentinel">Sentinel Grid</a><a href="#deployment">Deployment</a><a href="#time">Live Time</a><a href="#weather">Weather</a><a href="#inventor">Inventor</a></div></div></nav>
 <main>
 <section id="home" class="hero"><div class="wrap hero-grid"><div><span class="eyebrow"><i class="pulse"></i> Conceptual engineering ecosystem</span><h1>Energy is moving everywhere.<br><span style="color:var(--cyan)">IGERS asks what can be recovered.</span></h1><p class="lead">IGERS-BD-01 is an integrated concept for exploring distributed recovery of otherwise underutilized mechanical and environmental energy across transportation, infrastructure and selected environmental systems.</p><div class="actions"><a class="btn primary" href="#concept">Explore IGERS</a><a class="btn" href="#journey">How it works</a><a class="btn" href="#time">Open live time</a></div></div><div class="hero-visual"><div class="orb one"></div><div class="orb two"></div><div class="hub"><div><b>IGERS<br>BD-01</b><div class="mini">Recovery ecosystem</div></div></div><div class="node n1">ROAD / VEHICLE</div><div class="node n2">WATER / FLOW</div><div class="node n3">SOLAR / AIRFLOW</div><div class="node n4">VIBRATION / HUMAN</div><div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div></div></div></section>
-<section id="live" aria-label="Live information center"><div class="wrap"><div class="section-head"><div><div class="kicker">LIVE 01 · Operations center</div><h2>Live time + environment + seismic monitor.</h2></div><span class="eyebrow"><span class="pulse"></span>LIVE DATA LINKS</span></div><div class="grid2"><article class="card live-card"><div class="live-card-head"><div><div class="label">World time engine</div><h3 id="liveClockHero">--:--:--</h3></div><span class="live-badge" id="clockFeedState">LIVE</span></div><p id="liveClockMeta">Bangladesh + visitor timezone + world clock</p></article><article class="card live-card"><div class="live-card-head"><div><div class="label">Weather feed</div><h3 id="weatherFeedState">CONNECTING</h3></div><span class="live-badge" id="weatherFeedDot">●</span></div><p id="weatherFeedMeta">Open-Meteo current conditions</p></article><article class="card live-card"><div class="live-card-head"><div><div class="label">Asia earthquake feed</div><h3 id="quakeFeedState">CONNECTING</h3></div><span class="live-badge" id="quakeFeedDot">●</span></div><p id="quakeFeedMeta">USGS real-time GeoJSON · last 1 hour</p></article><article class="card live-card"><div class="live-card-head"><div><div class="label">System integrity</div><h3 id="systemFeedState">READY</h3></div><span class="live-badge">SAFE</span></div><p>Each external feed fails independently so the core website stays usable.</p></article></div></div></section>
 <section id="concept"><div class="wrap"><div class="section-head"><div><div class="kicker">01 · What is IGERS?</div><h2>A distributed recovery framework.</h2></div><p class="mini" style="max-width:440px">Available Energy ≠ Recoverable Energy. Every application needs separate engineering feasibility analysis.</p></div><div class="grid"><article class="card"><div class="num">THE IDEA</div><h3>Look where energy is already moving</h3><p>Instead of depending only on new centralized generation, IGERS explores strategically selected recovery points inside existing infrastructure.</p></article><article class="card"><div class="num">THE OUTPUT</div><h3>Recover → convert → store → use</h3><p>Recovered mechanical or environmental energy can be converted into electricity, conditioned, stored, monitored and routed to suitable nearby loads.</p></article><article class="card"><div class="num">THE LIMIT</div><h3>Engineering decides what is practical</h3><p>Speed, mass, elevation, flow, vibration, losses, structural constraints, safety, maintenance and economics all affect real output.</p></article></div></div></section>
 <section id="energy"><div class="wrap"><div class="section-head"><div><div class="kicker">02 · Energy source map</div><h2>Where can energy come from?</h2></div></div><div class="grid"><article class="card"><div class="num">01</div><h3>Vehicle movement</h3><p>Mechanical energy associated with moving vehicles.</p><span class="tag">Transport</span></article><article class="card"><div class="num">02</div><h3>Braking / deceleration</h3><p>Recovery opportunities during controlled deceleration.</p><span class="tag">Kinetic</span></article><article class="card"><div class="num">03</div><h3>Elevation change</h3><p>Potential energy associated with movement through elevation differences.</p><span class="tag">Potential</span></article><article class="card"><div class="num">04</div><h3>Controlled water flow</h3><p>Hydraulic or flow-based recovery where technically appropriate.</p><span class="tag">Hydraulic</span></article><article class="card"><div class="num">05</div><h3>Vibration</h3><p>Small-scale mechanical recovery from suitable infrastructure.</p><span class="tag">Mechanical</span></article><article class="card"><div class="num">06</div><h3>Footstep / human movement</h3><p>Small-scale recovery from high-footfall environments.</p><span class="tag">Micro-energy</span></article><article class="card"><div class="num">07</div><h3>Airflow</h3><p>Recovery from suitable airflow conditions and site geometry.</p><span class="tag">Aerodynamic</span></article><article class="card"><div class="num">08</div><h3>Solar support</h3><p>Complementary renewable energy for distributed node architecture.</p><span class="tag">PV support</span></article><article class="card"><div class="num">09</div><h3>Infrastructure interaction</h3><p>Other site-specific mechanical interactions identified by survey and modelling.</p><span class="tag">Site-specific</span></article></div></div></section>
 <section id="journey"><div class="wrap"><div class="section-head"><div><div class="kicker">03 · Signature architecture</div><h2>The IGERS energy journey</h2></div></div><div class="journey"><div class="step">ENERGY<br>SOURCE</div><div class="arrow">→</div><div class="step">RECOVERY<br>MECHANISM</div><div class="arrow">→</div><div class="step">CONVERSION<br>+ CONDITIONING</div><div class="arrow">→</div><div class="step">STORAGE<br>+ LOCAL USE</div></div><div class="grid2" style="margin-top:16px"><article class="card"><h3>Control &amp; monitoring</h3><p>Sensor data, operating state, power condition and maintenance status can be observed through an integrated dashboard.</p></article><article class="card"><h3>Suitable local loads</h3><p>Road lighting, signs, sensors, traffic systems, communication equipment, monitoring devices and emergency-support loads are conceptual examples.</p></article></div></div></section>
@@ -118,7 +115,7 @@ section{padding:72px 0}.section-head{display:flex;justify-content:space-between;
       setText('worldTime', timeFmt(selected));
       setText('worldDate', dateFmt(selected)+' · '+zoneName(selected));
       setText('liveTick', new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'}));
-      setText('liveState','LIVE'); setText('liveClockHero',timeFmt('Asia/Dhaka')); setText('clockFeedState','LIVE'); setText('liveClockMeta','Bangladesh '+timeFmt('Asia/Dhaka')+' · visitor '+timeFmt(localZone));
+      setText('liveState','LIVE');
     } catch (error) {
       const panel=$('timeStatus');
       if(panel) panel.innerHTML='<div class="live-left"><span class="live-dot"></span><div><b style="color:var(--danger)">LIVE UPDATE ERROR</b><span>Clock engine failed to render.</span></div></div>';
@@ -139,33 +136,23 @@ section{padding:72px 0}.section-head{display:flex;justify-content:space-between;
   }
   async function loadWeather(){
     try {
-      let lat=23.8103, lon=90.4125, place='Dhaka, Bangladesh', tz='Asia/Dhaka';
-      if(navigator.geolocation){
-        try{
-          const pos=await new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,{maximumAge:300000,timeout:2500,enableHighAccuracy:false}));
-          if(Number.isFinite(pos.coords.latitude)&&Number.isFinite(pos.coords.longitude)){lat=pos.coords.latitude;lon=pos.coords.longitude;place='Visitor location';tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'auto';}
-        }catch(_){ /* privacy/no-permission fallback stays Dhaka */ }
-      }
-      const url=`https://api.open-meteo.com/v1/forecast?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=${encodeURIComponent(tz)}`;
+      const url='https://api.open-meteo.com/v1/forecast?latitude=23.8103&longitude=90.4125&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=Asia%2FDhaka';
       const response=await fetch(url,{cache:'no-store'});
       if(!response.ok) throw new Error('Weather request failed');
       const data=await response.json();
       const current=data.current || {};
       const desc=weatherText(current.weather_code);
-      setText('temp', Number.isFinite(Number(current.temperature_2m)) ? Math.round(Number(current.temperature_2m))+'°C' : '--°');
+      setText('temp', Math.round(Number(current.temperature_2m))+'°C');
       setText('weatherText', desc[0]);
       setText('weatherIcon', desc[1]);
-      setText('wind', Number.isFinite(Number(current.wind_speed_10m)) ? Math.round(Number(current.wind_speed_10m))+' km/h' : '--');
-      setText('humidity', Number.isFinite(Number(current.relative_humidity_2m)) ? Math.round(Number(current.relative_humidity_2m))+'%' : '--');
+      setText('wind', Math.round(Number(current.wind_speed_10m))+' km/h');
+      setText('humidity', Math.round(Number(current.relative_humidity_2m))+'%');
       setText('weatherUpdated', current.time ? new Date(current.time).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}) : 'Live');
-      const label=$( 'weather' ); if(label) { const el=label.querySelector('.label'); if(el) el.textContent=place; }
-      setText('weatherStatus','LIVE weather feed. '+place+' · Open-Meteo current conditions.');
-      setText('weatherFeedState','LIVE'); setText('weatherFeedMeta',place+' · updated '+(current.time||'now')); setText('weatherFeedDot','●');
+      setText('weatherStatus','Live Dhaka weather loaded. The weather panel can fail independently without breaking the rest of the site.');
     } catch (_) {
       setText('weatherText','Weather unavailable');
       setText('weatherIcon','☁️');
-      setText('weatherStatus','Weather feed temporarily unavailable. Time, earthquake monitoring and the rest of the website remain operational.');
-      setText('weatherFeedState','OFFLINE'); setText('weatherFeedMeta','Retrying automatically · feed isolated from core site'); setText('weatherFeedDot','○');
+      setText('weatherStatus','Weather is temporarily unavailable. Time and all other website sections remain functional.');
     }
   }
 
@@ -181,10 +168,10 @@ section{padding:72px 0}.section-head{display:flex;justify-content:space-between;
       setText('envWind',Number.isFinite(w)?Math.round(w):'--'); setWidth('windBar',Number.isFinite(w)?Math.min(w,100):0);
       setText('windDir','Direction: '+(Number.isFinite(wd)?Math.round(wd)+'° · '+degToCompass(wd):'--'));
       setText('envTemp',Number.isFinite(t)?t.toFixed(1):'--'); setText('envTempText','Open-Meteo current atmospheric feed');
-      setText('envState','LIVE'); setText('systemFeedState','ONLINE'); setText('envUpdated',c.time?'Updated '+c.time.replace('T',' '):'Updated live');
+      setText('envState','LIVE'); setText('envUpdated',c.time?'Updated '+c.time.replace('T',' '):'Updated live');
       setText('radarSync','SYNC '+new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'}));
       setText('envStatus','Environmental feed online. Humidity and airflow are live external readings for the Dhaka display point.');
-    }catch(_){ setText('envState','OFFLINE'); setText('systemFeedState','DEGRADED'); setText('envUpdated','Live environmental feed unavailable'); setText('envStatus','Environmental feed unavailable. The rest of the interface remains operational.'); }
+    }catch(_){ setText('envState','OFFLINE'); setText('envUpdated','Live environmental feed unavailable'); setText('envStatus','Environmental feed unavailable. The rest of the interface remains operational.'); }
   }
   const bangladeshLat=23.8103, bangladeshLon=90.4125;
   function haversineKm(lat1,lon1,lat2,lon2){ const R=6371, toRad=x=>x*Math.PI/180, dLat=toRad(lat2-lat1), dLon=toRad(lon2-lon1); const a=Math.sin(dLat/2)**2+Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2; return 2*R*Math.asin(Math.sqrt(a)); }
@@ -206,13 +193,13 @@ section{padding:72px 0}.section-head{display:flex;justify-content:space-between;
       const r=await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error('earthquake feed failed');
       const data=await r.json(); const features=(data.features||[]).sort((a,b)=>(b.properties?.time||0)-(a.properties?.time||0));
       const relevant=features.filter(f=>{ const g=f.geometry?.coordinates||[]; const lat=Number(g[1]), lon=Number(g[0]), mag=Number(f.properties?.mag); return Number.isFinite(lat)&&Number.isFinite(lon)&&Number.isFinite(mag)&&isInAsia(lat,lon); }).slice(0,6);
-      if(!relevant.length){ alert?.classList.add('clear'); alert?.classList.remove('attention'); setText('quakeMain','No recent qualifying earthquake event in the monitored view.'); setText('quakeFeedState','LIVE'); setText('quakeFeedDot','●'); setText('quakeFeedMeta','USGS checked successfully · '+features.length+' global events scanned'); setText('quakeMeta','USGS past-hour feed checked successfully · '+features.length+' global events scanned'); }
+      if(!relevant.length){ alert?.classList.add('clear'); alert?.classList.remove('attention'); setText('quakeMain','No recent qualifying earthquake event in the monitored view.'); setText('quakeMeta','USGS past-hour feed checked successfully · '+features.length+' global events scanned'); }
       else{
         const top=relevant[0], p=top.properties||{}, g=top.geometry?.coordinates||[]; const mag=Number(p.mag), dist=haversineKm(bangladeshLat,bangladeshLon,Number(g[1]),Number(g[0]));
         alert?.classList.remove('clear'); alert?.classList.add(mag>=5?'attention':'clear');
         setText('quakeMain','M'+(Number.isFinite(mag)?mag.toFixed(1):'?')+' · '+(p.place||'Unknown location'));
         setText('quakeMeta','Approx. '+Math.round(dist)+' km from Dhaka · '+formatAgo(Date.now()-Number(p.time||Date.now()))+' · USGS Asia-region feed view');
-        setText('quakeTime',p.time?new Date(p.time).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}):'--'); setText('quakeFeedState','LIVE'); setText('quakeFeedDot','●'); setText('quakeFeedMeta','USGS Asia monitor · refreshed '+new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'}));
+        setText('quakeTime',p.time?new Date(p.time).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}):'--');
         const ql=$('quakeList');
         if(ql){
           ql.textContent='';
@@ -227,7 +214,7 @@ section{padding:72px 0}.section-head{display:flex;justify-content:space-between;
           });
         }
       }
-    }catch(_){ setText('quakeMain','Earthquake feed temporarily unavailable.'); setText('quakeFeedState','OFFLINE'); setText('quakeFeedDot','○'); setText('quakeFeedMeta','USGS connection unavailable · automatic retry active'); setText('quakeMeta','USGS connection could not be reached from this browser.'); const ql=$('quakeList'); if(ql) ql.innerHTML=''; }
+    }catch(_){ setText('quakeMain','Earthquake feed temporarily unavailable.'); setText('quakeMeta','USGS connection could not be reached from this browser.'); const ql=$('quakeList'); if(ql) ql.innerHTML=''; }
   }
   loadEnvironment(); setInterval(loadEnvironment,60000);
   loadEarthquakes(); setInterval(loadEarthquakes,60000);

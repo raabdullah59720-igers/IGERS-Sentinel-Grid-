@@ -1,10 +1,6 @@
-IGERS-BD-01 Professional Live Website
+IGERS-BD-01 FULL WEBSITE
+GitHub Pages ready.
 
-Includes:
-- Bangladesh, visitor-local and world time
-- Live Weather via Open-Meteo with Dhaka fallback
-- Live Asia earthquake monitor via USGS GeoJSON
-- Live update indicators and independent feed fault isolation
-- IGERS professional conceptual, engineering, simulator and deployment sections
+Open index.html from the repository root.
 
-Deploy on GitHub Pages as a static site. External live feeds require browser internet access.
+Earthquake monitoring uses the USGS real-time GeoJSON feed. The interface filters events to a broad Asia-region coordinate polygon and refreshes every minute. This is an informational display, not an official warning system.
