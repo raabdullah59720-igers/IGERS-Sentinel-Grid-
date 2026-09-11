@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IGERS-BD-01 | Integrated Gradient-Based Energy Recovery and Storage System">
+<title>IGERS-BD-01 | Energy Recovery & Storage</title>
+<style>
+:root{--bg:#061016;--panel:#0b1b22;--line:#1d3943;--text:#eaf7f5;--muted:#91aaa9;--accent:#4ee0bb;--accent2:#69a7ff;--glow:0 0 35px rgba(78,224,187,.18)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 10%,#12343b 0,#061016 38%,#040b0f 100%);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.wrap{max-width:1160px;margin:auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(4,11,15,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.08em}.brand span{color:var(--accent)}.links{display:flex;gap:25px;color:#aac0bf;font-size:14px}.links a:hover{color:var(--accent)}
+.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:50px;padding:70px 0}.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid #24534f;border-radius:99px;padding:7px 12px;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 14px var(--accent)}h1{font-size:clamp(44px,7vw,82px);line-height:.98;margin:22px 0;letter-spacing:-.055em}h1 em{font-style:normal;color:var(--accent)}.lead{font-size:18px;color:#a8bdbc;max-width:650px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{padding:13px 19px;border-radius:10px;border:1px solid #29434b;font-weight:800;font-size:14px}.primary{background:var(--accent);color:#04100d;border-color:var(--accent);box-shadow:var(--glow)}.secondary:hover{border-color:var(--accent);color:var(--accent)}
+.diagram{background:linear-gradient(145deg,rgba(20,50,58,.8),rgba(7,20,26,.8));border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--glow);position:relative;overflow:hidden}.diagram:after{content:"";position:absolute;inset:-60%;background:radial-gradient(circle,rgba(78,224,187,.08),transparent 45%);pointer-events:none}.machine{height:390px;position:relative}.road{position:absolute;left:8%;right:8%;top:48%;height:74px;background:#152a31;border:2px solid #31515a;border-radius:16px;transform:skewY(-8deg)}.road:before,.road:after{content:"";position:absolute;top:34px;width:15%;border-top:4px dashed #55777b}.road:before{left:5%}.road:after{right:5%}.gate{position:absolute;left:21%;top:27%;width:28%;height:43%;border:3px solid #78979a;border-radius:7px;background:repeating-linear-gradient(90deg,#29474e 0 8px,#13282e 8px 17px);box-shadow:0 0 24px rgba(105,167,255,.15)}.gate:after{content:"17-GATE ARRAY";position:absolute;bottom:-31px;left:0;color:#83a7aa;font-size:10px;letter-spacing:.12em}.turb{position:absolute;right:14%;top:35%;width:120px;height:120px;border:8px solid #2c5960;border-radius:50%;background:#07151b;box-shadow:inset 0 0 0 9px #10272e}.turb:before{content:"";position:absolute;inset:28px;border:3px solid var(--accent);border-radius:50%;box-shadow:0 0 20px rgba(78,224,187,.3)}.flow{position:absolute;left:47%;right:28%;top:48%;height:4px;background:var(--accent);box-shadow:0 0 14px var(--accent)}.flow:after{content:"› › ›";position:absolute;right:-4px;top:-17px;color:var(--accent);letter-spacing:8px}.label{position:absolute;color:#b8cecc;font-size:11px;font-weight:800;letter-spacing:.08em}.l1{left:20%;top:17%}.l2{right:14%;top:28%}.l3{left:8%;bottom:15%;color:var(--accent)}
+section{padding:95px 0}.section-head{max-width:720px;margin-bottom:42px}.kicker{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}h2{font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.04em;margin:10px 0 14px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(13,31,39,.9),rgba(6,17,22,.9));border:1px solid var(--line);border-radius:17px;padding:25px;min-height:190px}.icon{font-size:26px}.card h3{margin:14px 0 7px}.metric{font-size:36px;font-weight:900;color:var(--accent);line-height:1;margin:10px 0}.flowchart{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:center}.step{padding:23px 15px;text-align:center;border:1px solid #29444c;border-radius:14px;background:#0b1b22}.arrow{text-align:center;color:var(--accent);font-size:24px}.note{margin-top:24px;padding:17px 20px;border-left:3px solid var(--accent);background:#0a191f;color:#a9bfbd;border-radius:0 10px 10px 0}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#78908f;font-size:13px}.footer{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr;padding:55px 0}.machine{height:320px}.grid{grid-template-columns:1fr}.flowchart{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.footer{flex-direction:column}section{padding:70px 0}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav"><div class="brand">IGERS<span>-BD-01</span></div><div class="links"><a href="#system">System</a><a href="#technology">Technology</a><a href="#model">Model</a><a href="#research">Research</a></div></div></nav>
+
+<main>
+<section class="hero"><div class="wrap" style="display:contents"><div>
+<div class="eyebrow"><i class="dot"></i> Engineering Research Concept</div>
+<h1>Recover energy.<br><em>Store the gradient.</em></h1>
+<p class="lead">Integrated Gradient-Based Energy Recovery and Storage System, IGERS-BD-01, is a modular concept for converting controlled hydraulic and mechanical energy into usable electrical power.</p>
+<div class="actions"><a class="btn primary" href="#system">Explore system</a><a class="btn secondary" href="#research">Research framework</a></div>
+</div>
+<div class="diagram" aria-label="Conceptual IGERS system visualization">
+<div class="machine"><div class="label l1">CONTROLLED WATER FLOW</div><div class="label l2">ENERGY RECOVERY</div><div class="label l3">MODULAR • SCALABLE • MONITORABLE</div><div class="gate"></div><div class="road"></div><div class="flow"></div><div class="turb"></div></div>
+</div></div></section>
+
+<section id="system"><div class="wrap"><div class="section-head"><div class="kicker">01 / System</div><h2>One platform, multiple energy-recovery layers.</h2><p class="muted">A clean presentation template for the IGERS-BD-01 research concept. Replace the placeholder engineering values with validated field measurements as the project develops.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">◈</div><h3>Gradient Capture</h3><p class="muted">Uses controlled energy gradients as an input to an engineered recovery stage.</p></div>
+<div class="card"><div class="icon">◎</div><h3>Conversion</h3><p class="muted">Mechanical movement is coupled to an electrical generator through a modular conversion path.</p></div>
+<div class="card"><div class="icon">▣</div><h3>Storage</h3><p class="muted">Recovered electrical energy can be conditioned and directed toward an appropriate storage system.</p></div>
+</div></div></section>
+
+<section id="technology"><div class="wrap"><div class="section-head"><div class="kicker">02 / Technology</div><h2>Designed around measurable engineering variables.</h2></div>
+<div class="grid">
+<div class="card"><div class="metric">17</div><h3>Gate architecture</h3><p class="muted">Conceptual multi-gate arrangement for distributed energy-recovery modules.</p></div>
+<div class="card"><div class="metric">v</div><h3>Flow velocity</h3><p class="muted">Velocity is a key design variable for hydraulic-flow moderation and energy estimation.</p></div>
+<div class="card"><div class="metric">η</div><h3>System efficiency</h3><p class="muted">Final yield depends on hydraulic conditions, generator efficiency, losses, duty cycle and controls.</p></div>
+</div></div></section>
+
+<section id="model"><div class="wrap"><div class="section-head"><div class="kicker">03 / Energy pathway</div><h2>From gradient to usable electricity.</h2></div>
+<div class="flowchart"><div class="step"><b>01</b><br>Energy source</div><div class="arrow">→</div><div class="step"><b>02</b><br>Controlled flow</div><div class="arrow">→</div><div class="step"><b>03</b><br>Generator</div><div class="arrow">→</div><div class="step"><b>04</b><br>Conditioning + storage</div></div>
+<div class="note">Engineering note: this website intentionally avoids presenting unverified power or profit figures as facts. Add validated site-specific calculations to the live project version.</div></div></section>
+
+<section id="research"><div class="wrap"><div class="section-head"><div class="kicker">04 / Research</div><h2>Built to grow from prototype to field study.</h2><p class="muted">Use this section for drawings, simulation outputs, measured discharge, head, velocity, generator curves, cost analysis and prototype photographs.</p></div>
+<div class="grid"><div class="card"><h3>Simulation</h3><p class="muted">CFD / hydraulic modeling, generator performance and system-loss analysis.</p></div><div class="card"><h3>Prototype</h3><p class="muted">Mechanical assembly, sensors, power electronics and data acquisition.</p></div><div class="card"><h3>Validation</h3><p class="muted">Compare theoretical output against measured electrical energy and operating conditions.</p></div></div></div></section>
+</main>
+<footer><div class="wrap footer"><span>IGERS-BD-01 · Integrated Gradient-Based Energy Recovery and Storage System</span><span>Research concept website template</span></div></footer>
+</body>
+</html>
