@@ -1,19 +1,21 @@
-IGERS-BD-01 TIME MODULE FIX
-===========================
+IGERS-BD-01 COMPLETE WEBSITE PACKAGE
+====================================
 
-Replace your current website's time component with this index.html, or copy its
-clock JavaScript into your existing project.
+Open index.html directly or upload the whole folder to GitHub Pages / any static host.
 
-Features:
-- Live Bangladesh time (Asia/Dhaka)
-- Visitor local time using browser timezone detection
-- Selectable world time zones
-- Updates every 1 second
-- 24-hour display
-- Date + timezone name
-- Works without a time API
-- Saves selected world city in localStorage
+Included:
+- Full IGERS-BD-01 conceptual homepage and sections
+- Energy source map
+- IGERS Energy Journey
+- Roads, bridges/flyovers, water/hydraulic and hybrid concepts
+- Sentinel Grid conceptual section
+- Bangladesh-focused deployment section
+- Inventor / author section
+- Live Bangladesh time
+- Visitor browser-local time
+- Selectable world time
+- 1-second live updates
+- Dhaka live weather via Open-Meteo browser request
 
-GitHub:
-Upload index.html as the root entry point or copy the Time module into your
-existing project.
+No API key is required for the time engine.
+Weather requires an internet connection to the public Open-Meteo endpoint.
