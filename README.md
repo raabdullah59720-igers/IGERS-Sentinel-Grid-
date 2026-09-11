@@ -1,22 +1,25 @@
-# HELLO-BANGLADESH (ASSALAMUALAIKUM)
-# IGERS-BD-01
-**Integrated Gradient-Based Energy Recovery and Storage System**  
-**Inventor & Author:** Abdullah Al Rafi [BD]  
-**Concept / Invention Date:** 14 August 2026
+# IGERS-BD-01 Realistic Live Interface
 
-## Run immediately
-This version is a dependency-free static website. You do **not** need Node.js, npm, React, or Vite.
+A dependency-free single-page conceptual engineering interface for IGERS-BD-01.
 
-### On your computer
-1. Extract the ZIP.
-2. Open `index.html` in Chrome/Edge/Firefox.
+## Includes
+- Live Bangladesh time
+- Visitor local time from browser timezone
+- UTC and Tokyo clocks
+- Location-aware weather using browser geolocation + Open-Meteo
+- Conceptual energy telemetry simulation
+- Animated energy-flow schematic
+- System health diagnostics
+- Storage / recovery / conversion metrics
+- Six conceptual IGERS modules
+- Responsive desktop/mobile layout
+- No image assets required
 
-### On GitHub Pages
-1. Create a GitHub repository.
-2. Upload `index.html` and `README.md`.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select `main` and `/ (root)`, then Save.
-6. GitHub will provide the live website link.
+## Run
+Open `index.html` directly in a modern browser.
 
-The site is intentionally image-free and presents IGERS as a modular engineering concept rather than a water-turbine-only website. Future 3D renders, diagrams, simulations, measured data, and official branding can be added later.
+## GitHub Pages
+Upload the contents to a GitHub repository.
+Settings -> Pages -> Deploy from branch -> `main` -> `/ (root)` -> Save.
+
+Weather location requires HTTPS and browser location permission. The displayed engineering telemetry is explicitly conceptual simulation data and should not be presented as measured field data.
