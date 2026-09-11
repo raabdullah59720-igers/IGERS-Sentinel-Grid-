@@ -1,4 +1,4 @@
-# IGERS-BD-01 Website
+# IGERS-BD-01 
 
 **Integrated Gradient-Based Energy Recovery and Storage System**
 
