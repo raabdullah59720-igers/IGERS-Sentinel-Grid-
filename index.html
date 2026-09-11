@@ -1,169 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#071426">
-<title>IGERS-BD-01 | Integrated Gradient-Based Energy Recovery and Storage System</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IGERS-BD-01 | Live World Time</title>
+<meta name="description" content="IGERS-BD-01 live world time, Bangladesh time, visitor local time and weather-ready dashboard.">
 <style>
-:root{--bg:#071426;--panel:#0c1d33;--panel2:#102640;--line:#1b3b5c;--text:#eaf4ff;--muted:#8ea7bd;--cyan:#31d7ff;--green:#55e6a5;--amber:#ffc857;--red:#ff7185;--shadow:0 18px 50px rgba(0,0,0,.35)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 0%,#113253 0,#071426 40%,#040b15 100%);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:auto;padding:24px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0 28px}
-.brand{display:flex;gap:13px;align-items:center}.mark{width:52px;height:52px;border:1px solid #3a6b8c;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#0e3049,#06111e);box-shadow:0 0 28px rgba(49,215,255,.16)}
-.mark span{font-weight:900;color:var(--cyan);font-size:16px}.brand h1{font-size:18px;letter-spacing:.5px;margin:0}.brand small{color:var(--muted)}.live{display:flex;gap:10px;align-items:center;background:#0b1c2f;border:1px solid var(--line);padding:9px 13px;border-radius:999px;font-size:12px}.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.hero-card,.panel{background:linear-gradient(160deg,rgba(16,38,64,.96),rgba(8,24,41,.97));border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px}.hero-card{padding:30px;position:relative;overflow:hidden}.hero-card:after{content:"";position:absolute;inset:auto -10% -55% 20%;height:250px;background:radial-gradient(circle,rgba(49,215,255,.14),transparent 60%)}.eyebrow{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:800}.hero h2{font-size:clamp(30px,4vw,56px);line-height:1.02;margin:14px 0}.hero p{max-width:800px;color:#b7ccdf;font-size:15px;line-height:1.75}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.tag{padding:7px 10px;border:1px solid #244764;border-radius:10px;color:#bcd5e8;font-size:12px;background:#09192b}.monitor{padding:18px}.monitor h3{margin:0 0 14px;font-size:15px}.clockgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.clock{background:#08182a;border:1px solid #183a58;border-radius:15px;padding:12px}.clock label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}.clock strong{display:block;font-size:21px;margin-top:7px}.clock small{color:#7d98ae}.section{margin-top:18px}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}.section-title h3{margin:0;font-size:18px}.section-title span{color:var(--muted);font-size:12px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric{padding:18px;border-radius:18px;background:#081a2c;border:1px solid #173c5b}.metric label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.metric b{display:block;font-size:27px;margin-top:8px}.metric small{color:#7e9ab2}.up{color:var(--green)}.warn{color:var(--amber)}
-.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{padding:20px}.schematic{height:430px;position:relative;overflow:hidden;background:linear-gradient(#071626,#081b2d)}.schematic:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(49,215,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(49,215,255,.05) 1px,transparent 1px);background-size:34px 34px}.pipe{position:absolute;left:9%;right:9%;height:70px;top:170px;border:2px solid #426078;border-radius:20px;background:linear-gradient(90deg,#16384e,#0c2337);overflow:hidden}.flow{position:absolute;inset:0;display:flex;align-items:center;gap:30px;animation:move 2s linear infinite}.flow i{width:68px;height:12px;border-radius:30px;background:linear-gradient(90deg,transparent,var(--cyan));filter:drop-shadow(0 0 7px rgba(49,215,255,.65));opacity:.8}.flow i:nth-child(2){animation-delay:.3s}.flow i:nth-child(3){animation-delay:.6s}.flow i:nth-child(4){animation-delay:.9s}@keyframes move{from{transform:translateX(-120px)}to{transform:translateX(500px)}}.node{position:absolute;padding:12px 15px;border:1px solid #2d5877;border-radius:13px;background:#0a1e31;box-shadow:0 8px 20px rgba(0,0,0,.3);font-size:12px}.node b{display:block;font-size:13px}.n1{left:5%;top:75px}.n2{left:40%;top:75px}.n3{right:5%;top:75px}.n4{left:40%;bottom:68px}.n5{right:7%;bottom:68px}.stem{position:absolute;left:49%;top:235px;width:2px;height:70px;background:#31536d}.side{padding:20px}.bars{display:grid;gap:12px;margin-top:14px}.barrow{display:grid;grid-template-columns:125px 1fr 58px;gap:9px;align-items:center;font-size:12px}.track{height:8px;background:#142c40;border-radius:999px;overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#1ea8d2,var(--cyan))}.status{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #18364f;font-size:13px}.status:last-child{border:0}.pill{padding:4px 8px;border-radius:999px;font-size:10px;background:#103526;color:var(--green);border:1px solid #1a6545}.pill.a{background:#3a2b0c;color:var(--amber);border-color:#69531e}
-.models{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.model{padding:18px;border:1px solid #1c425f;border-radius:18px;background:#091a2d;min-height:170px}.model .num{color:var(--cyan);font-size:11px;font-weight:800}.model h4{margin:9px 0 7px}.model p{color:#91aabd;font-size:12px;line-height:1.65}.model .mini{height:5px;background:linear-gradient(90deg,#153a56,var(--cyan));border-radius:99px;margin-top:15px}
-.weather{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.weather .w{padding:12px;background:#08182a;border:1px solid #193a55;border-radius:14px}.w label{display:block;color:var(--muted);font-size:10px}.w b{font-size:18px}.footer{margin:28px 0 5px;padding:18px 0;color:#708ca4;font-size:11px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:1000px){.hero,.grid2{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.models{grid-template-columns:1fr 1fr}}@media(max-width:650px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.cards,.models{grid-template-columns:1fr}.clockgrid{grid-template-columns:1fr}.schematic{height:380px}.pipe{left:5%;right:5%}.n1{left:3%}.n2{left:35%}.n3{right:3%}.n4{left:35%}.n5{right:3%}}
+:root{--bg:#071018;--panel:#0d1822;--line:#1f3342;--text:#eff7fb;--muted:#91a8b7;--accent:#54d6ff;--accent2:#8af0c2;}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0%,#102c3b 0,#071018 45%,#050a0e 100%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}.wrap{max-width:1150px;margin:auto;padding:26px}.top{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:24px}.brand{font-weight:800;letter-spacing:.08em}.brand small{display:block;color:var(--muted);font-weight:500;letter-spacing:.02em}.badge{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--accent2);font-size:12px}.hero{margin:28px 0 22px}.hero h1{font-size:clamp(32px,5vw,62px);line-height:1.02;margin:0 0 12px}.hero p{max-width:780px;color:var(--muted);font-size:17px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:rgba(13,24,34,.88);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 15px 40px rgba(0,0,0,.18)}.label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:8px}.clock{font-size:clamp(27px,4vw,43px);font-variant-numeric:tabular-nums;font-weight:750;letter-spacing:.02em}.date{color:var(--muted);margin-top:5px}.tz{margin-top:12px;color:var(--accent)}select{width:100%;margin-top:12px;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:#08121a;color:var(--text);outline:none}.status{margin-top:20px;padding:13px 15px;border-radius:14px;background:#09151d;border:1px dashed var(--line);color:var(--muted)}.status b{color:var(--text)}.footer{margin-top:26px;color:#718898;font-size:12px;text-align:center}.online{display:inline-flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:#70e2ab;box-shadow:0 0 12px #70e2ab}.error{color:#ffb4b4}.wide{grid-column:span 3}@media(max-width:850px){.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.top{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
-    <div class="brand"><div class="mark"><span>IG</span></div><div><h1>IGERS-BD-01</h1><small>Integrated Gradient-Based Energy Recovery and Storage System</small></div></div>
-    <div class="live"><span class="dot"></span><span>LIVE SYSTEM INTERFACE</span><b id="localStatus">SYNCING</b></div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-card">
-      <div class="eyebrow">Conceptual Engineering Platform</div>
-      <h2>Distributed energy recovery, conversion & storage.</h2>
-      <p>IGERS-BD-01 is presented as a configurable energy-recovery architecture. The interface models a monitored flow path, controlled recovery stage, electrical conversion, storage and digital supervision layer. Values shown here are a conceptual simulation interface, not certified field measurements.</p>
-      <div class="meta"><span class="tag">Inventor & Author: Abdullah Al Rafi [BD]</span><span class="tag">Concept / Invention Date: 14 August 2026</span><span class="tag">System State: Concept Simulation</span></div>
-    </div>
-    <div class="panel monitor">
-      <h3>Global Operations Time</h3>
-      <div class="clockgrid">
-        <div class="clock"><label>Bangladesh · Dhaka</label><strong id="bdClock">--:--:--</strong><small id="bdDate">---</small></div>
-        <div class="clock"><label>Your Local Time</label><strong id="myClock">--:--:--</strong><small id="myZone">Detecting timezone...</small></div>
-        <div class="clock"><label>UTC</label><strong id="utcClock">--:--:--</strong><small>Universal reference</small></div>
-        <div class="clock"><label>Tokyo</label><strong id="tokyoClock">--:--:--</strong><small>Asia/Tokyo</small></div>
-      </div>
-      <div class="weather">
-        <div class="w"><label>Weather source</label><b id="weatherPlace">Auto location</b></div>
-        <div class="w"><label>Condition</label><b id="weatherTemp">--°C</b></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-title"><h3>Live System Telemetry</h3><span>conceptual real-time simulation</span></div>
-    <div class="cards">
-      <div class="metric"><label>Input flow velocity</label><b id="velocity">2.84 m/s</b><small class="up">within controlled band</small></div>
-      <div class="metric"><label>Recovered power</label><b id="power">42.6 kW</b><small class="up">+3.8% vs reference</small></div>
-      <div class="metric"><label>Recovery efficiency</label><b id="eff">81.4%</b><small class="up">conversion chain healthy</small></div>
-      <div class="metric"><label>Storage state</label><b id="soc">67%</b><small class="warn">charge management active</small></div>
-    </div>
-  </section>
-
-  <section class="section grid2">
-    <div class="panel">
-      <div class="section-title"><h3>IGERS Energy Recovery Path</h3><span>engineering schematic</span></div>
-      <div class="schematic">
-        <div class="node n1"><b>01 · Input</b>controlled source / gradient</div>
-        <div class="node n2"><b>02 · Regulation</b>velocity + pressure control</div>
-        <div class="node n3"><b>03 · Recovery</b>mechanical-to-electrical stage</div>
-        <div class="node n4"><b>04 · Conversion</b>conditioning & protection</div>
-        <div class="node n5"><b>05 · Storage</b>battery / super-capacitor layer</div>
-        <div class="pipe"><div class="flow"><i></i><i></i><i></i><i></i></div></div>
-        <div class="stem"></div>
-      </div>
-    </div>
-    <div class="panel side">
-      <div class="section-title"><h3>Subsystem Health</h3><span>diagnostic view</span></div>
-      <div class="status"><span>Flow regulation module</span><span class="pill">NOMINAL</span></div>
-      <div class="status"><span>Recovery generator</span><span class="pill">NOMINAL</span></div>
-      <div class="status"><span>Power electronics</span><span class="pill">NOMINAL</span></div>
-      <div class="status"><span>Energy storage</span><span class="pill">NOMINAL</span></div>
-      <div class="status"><span>Remote monitoring</span><span class="pill">CONNECTED</span></div>
-      <div class="bars">
-        <div class="barrow"><span>Conversion load</span><div class="track"><div class="fill" style="width:62%"></div></div><b>62%</b></div>
-        <div class="barrow"><span>Generator duty</span><div class="track"><div class="fill" style="width:74%"></div></div><b>74%</b></div>
-        <div class="barrow"><span>Storage reserve</span><div class="track"><div class="fill" style="width:67%"></div></div><b>67%</b></div>
-        <div class="barrow"><span>Thermal margin</span><div class="track"><div class="fill" style="width:86%"></div></div><b>86%</b></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-title"><h3>IGERS Concept Modules</h3><span>expandable architecture</span></div>
-    <div class="models">
-      <article class="model"><div class="num">MODULE 01</div><h4>Gradient Energy Recovery</h4><p>Captures usable energy from a controlled gradient or moving-fluid/mechanical source while protecting the source pathway from uncontrolled extraction.</p><div class="mini"></div></article>
-      <article class="model"><div class="num">MODULE 02</div><h4>Distributed Recovery Nodes</h4><p>Multiple recovery points can be represented as a network of monitored nodes, allowing local generation and centralized supervision.</p><div class="mini"></div></article>
-      <article class="model"><div class="num">MODULE 03</div><h4>Storage & Load Balancing</h4><p>Recovered electricity is conditioned and routed toward storage or local loads according to state-of-charge and demand conditions.</p><div class="mini"></div></article>
-      <article class="model"><div class="num">MODULE 04</div><h4>Digital Twin Layer</h4><p>Conceptual telemetry provides an operator-facing view of flow, power, efficiency, storage and subsystem health in one interface.</p><div class="mini"></div></article>
-      <article class="model"><div class="num">MODULE 05</div><h4>Adaptive Control</h4><p>Control targets can be adjusted dynamically in a future physical implementation using sensors, protection logic and embedded control hardware.</p><div class="mini"></div></article>
-      <article class="model"><div class="num">MODULE 06</div><h4>Scalable Deployment</h4><p>Architecture can be adapted to hydro, mechanical, infrastructure-assisted or hybrid recovery configurations after site-specific engineering validation.</p><div class="mini"></div></article>
-    </div>
-  </section>
-
-  <section class="section grid2">
-    <div class="panel">
-      <div class="section-title"><h3>Visitor Environment</h3><span>browser-based live context</span></div>
-      <div class="status"><span>Browser timezone</span><b id="timezone">--</b></div>
-      <div class="status"><span>Language</span><b id="language">--</b></div>
-      <div class="status"><span>Local time</span><b id="visitorTime">--</b></div>
-      <div class="status"><span>Location weather</span><b id="geoState">Permission / lookup</b></div>
-      <button onclick="locateWeather()" style="margin-top:14px;width:100%;padding:12px;border-radius:12px;border:1px solid #2f6986;background:#0c2b3f;color:#dff8ff;cursor:pointer">UPDATE WEATHER FROM MY LOCATION</button>
-    </div>
-    <div class="panel">
-      <div class="section-title"><h3>Design Note</h3><span>research interface</span></div>
-      <p style="color:#9db5c8;line-height:1.8;font-size:13px">The visual system intentionally separates the <b>concept architecture</b> from measured engineering results. Before physical deployment, turbine/generator sizing, structural safety, hydraulic losses, electrical protection, environmental effects, control stability and site economics must be validated with field data and engineering calculations.</p>
-      <div class="tag">IGERS-BD-01 · Research Concept Interface</div>
-    </div>
-  </section>
-
-  <footer class="footer"><span>© 2026 IGERS-BD-01 · Abdullah Al Rafi [BD]</span><span>Conceptual UI · Live clock · Location-aware weather · No image assets required</span></footer>
+<header class="top"><div class="brand">IGERS-BD-01<small>Integrated Gradient-Based Energy Recovery &amp; Storage System</small></div><div class="badge online"><span class="dot"></span>LIVE TIME ENGINE</div></header>
+<section class="hero"><h1>Energy is moving everywhere.<br>Time is moving too.</h1><p>A lightweight live-time dashboard for the IGERS website. Bangladesh Time and the visitor's browser-local time are calculated directly in the browser, so the clock keeps working without a time API.</p></section>
+<section class="grid">
+<article class="card"><div class="label">Bangladesh Standard Time</div><div id="bdTime" class="clock">--:--:--</div><div id="bdDate" class="date">Loading...</div><div class="tz">Asia/Dhaka · UTC+06:00</div></article>
+<article class="card"><div class="label">Your local time</div><div id="localTime" class="clock">--:--:--</div><div id="localDate" class="date">Detecting browser timezone...</div><div id="localTz" class="tz">Timezone: --</div></article>
+<article class="card"><div class="label">World time</div><div id="worldTime" class="clock">--:--:--</div><div id="worldDate" class="date">Select a location</div><select id="zoneSelect" aria-label="Select world timezone"></select></article>
+<article class="card wide"><div class="label">Time System Status</div><div id="status" class="status"><b>Initializing...</b></div></article>
+</section>
+<div class="footer">IGERS-BD-01 · Inventor &amp; Author: Abdullah Al Rafi [BD] · Concept website module</div>
 </div>
-
 <script>
-const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Local";
-document.getElementById("timezone").textContent = tz;
-document.getElementById("myZone").textContent = tz;
-document.getElementById("language").textContent = navigator.language || "en";
-function fmt(zone, opts={}){return new Intl.DateTimeFormat("en-GB",{timeZone:zone,hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false,...opts}).format(new Date())}
-function tick(){
-  const now=new Date();
-  document.getElementById("bdClock").textContent=fmt("Asia/Dhaka");
-  document.getElementById("myClock").textContent=fmt(tz);
-  document.getElementById("utcClock").textContent=fmt("UTC");
-  document.getElementById("tokyoClock").textContent=fmt("Asia/Tokyo");
-  document.getElementById("bdDate").textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Dhaka",weekday:"short",day:"2-digit",month:"short",year:"numeric"}).format(now);
-  document.getElementById("visitorTime").textContent=fmt(tz);
-  document.getElementById("localStatus").textContent="SYNCED";
-  const n=(Math.sin(Date.now()/4200)+1)/2;
-  document.getElementById("velocity").textContent=(2.62+n*.46).toFixed(2)+" m/s";
-  document.getElementById("power").textContent=(39.2+n*5.7).toFixed(1)+" kW";
-  document.getElementById("eff").textContent=(78.5+n*4.9).toFixed(1)+"%";
-  document.getElementById("soc").textContent=Math.round(61+n*13)+"%";
-}
-tick();setInterval(tick,1000);
-
-async function fetchWeather(lat,lon,label){
-  try{
-    const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,weather_code&timezone=auto`;
-    const r=await fetch(url); const d=await r.json();
-    const c=d.current;
-    document.getElementById("weatherPlace").textContent=label||"Detected location";
-    document.getElementById("weatherTemp").textContent=`${Math.round(c.temperature_2m)}°C · feels ${Math.round(c.apparent_temperature)}°C`;
-    document.getElementById("geoState").textContent=`${Math.round(c.wind_speed_10m)} km/h wind · ${c.relative_humidity_2m}% humidity`;
-  }catch(e){
-    document.getElementById("weatherPlace").textContent="Weather unavailable";
-    document.getElementById("geoState").textContent="Network request failed";
+(function(){
+  'use strict';
+  const zones=[
+    ['Dhaka, Bangladesh','Asia/Dhaka'],['London, United Kingdom','Europe/London'],['New York, USA','America/New_York'],['Los Angeles, USA','America/Los_Angeles'],['Toronto, Canada','America/Toronto'],['Dubai, UAE','Asia/Dubai'],['Riyadh, Saudi Arabia','Asia/Riyadh'],['Delhi, India','Asia/Kolkata'],['Singapore','Asia/Singapore'],['Tokyo, Japan','Asia/Tokyo'],['Seoul, South Korea','Asia/Seoul'],['Sydney, Australia','Australia/Sydney'],['Paris, France','Europe/Paris'],['Berlin, Germany','Europe/Berlin'],['Moscow, Russia','Europe/Moscow'],['Cape Town, South Africa','Africa/Johannesburg'],['Nairobi, Kenya','Africa/Nairobi'],['São Paulo, Brazil','America/Sao_Paulo'],['Mexico City, Mexico','America/Mexico_City'],['UTC','UTC']
+  ];
+  const $=id=>document.getElementById(id);
+  const timeFmt=(zone,withZone=false)=>new Intl.DateTimeFormat('en-GB',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZoneName:withZone?'short':undefined}).format(new Date());
+  const dateFmt=zone=>new Intl.DateTimeFormat('en-GB',{timeZone:zone,weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(new Date());
+  const zoneName=zone=>{try{return new Intl.DateTimeFormat('en-US',{timeZone:zone,timeZoneName:'long'}).formatToParts(new Date()).find(p=>p.type==='timeZoneName')?.value || zone}catch{return zone}};
+  const localZone=Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+  zones.forEach(([name,zone])=>{const o=document.createElement('option');o.value=zone;o.textContent=name+' · '+zone; $('zoneSelect').appendChild(o)});
+  const saved=localStorage.getItem('igersWorldZone'); if(saved && zones.some(z=>z[1]===saved)) $('zoneSelect').value=saved;
+  function tick(){
+    try{
+      $('bdTime').textContent=timeFmt('Asia/Dhaka'); $('bdDate').textContent=dateFmt('Asia/Dhaka');
+      $('localTime').textContent=timeFmt(localZone); $('localDate').textContent=dateFmt(localZone); $('localTz').textContent='Timezone: '+localZone+' · '+zoneName(localZone);
+      const wz=$('zoneSelect').value; $('worldTime').textContent=timeFmt(wz); $('worldDate').textContent=dateFmt(wz)+' · '+zoneName(wz);
+      $('status').innerHTML='<b>Operational.</b> Live clocks are updating every second using the browser clock and IANA time-zone database.';
+    }catch(e){ $('status').innerHTML='<b class="error">Time engine error:</b> '+e.message; }
   }
-}
-function locateWeather(){
-  if(!navigator.geolocation){fetchWeather(23.8103,90.4125,"Dhaka, Bangladesh (fallback)");return}
-  document.getElementById("geoState").textContent="Requesting location…";
-  navigator.geolocation.getCurrentPosition(
-    p=>fetchWeather(p.coords.latitude,p.coords.longitude,"My detected location"),
-    ()=>{document.getElementById("geoState").textContent="Permission denied · using Dhaka";fetchWeather(23.8103,90.4125,"Dhaka, Bangladesh")}
-  );
-}
-fetchWeather(23.8103,90.4125,"Dhaka, Bangladesh");
+  $('zoneSelect').addEventListener('change',()=>{localStorage.setItem('igersWorldZone',$('zoneSelect').value);tick()});
+  tick(); setInterval(tick,1000);
+})();
 </script>
 </body>
 </html>
