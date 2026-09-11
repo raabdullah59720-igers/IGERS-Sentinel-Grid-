@@ -1,21 +1,8 @@
-IGERS-BD-01 COMPLETE WEBSITE PACKAGE
-====================================
+IGERS-BD-01 FULL WEBSITE
 
-Open index.html directly or upload the whole folder to GitHub Pages / any static host.
+GitHub Pages:
+1. Upload index.html to the repository root.
+2. Settings -> Pages -> Deploy from branch -> main / root.
+3. Open the generated GitHub Pages URL.
 
-Included:
-- Full IGERS-BD-01 conceptual homepage and sections
-- Energy source map
-- IGERS Energy Journey
-- Roads, bridges/flyovers, water/hydraulic and hybrid concepts
-- Sentinel Grid conceptual section
-- Bangladesh-focused deployment section
-- Inventor / author section
-- Live Bangladesh time
-- Visitor browser-local time
-- Selectable world time
-- 1-second live updates
-- Dhaka live weather via Open-Meteo browser request
-
-No API key is required for the time engine.
-Weather requires an internet connection to the public Open-Meteo endpoint.
+The website includes the complete IGERS conceptual sections, live Bangladesh time, visitor local time, selectable world time, and weather layer.
