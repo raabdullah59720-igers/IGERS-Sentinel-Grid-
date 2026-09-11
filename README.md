@@ -1,4 +1,4 @@
-# IGERS-BD-01
+# IGERS-BD-01-PROTOTYPE MODEL 
 
 **Integrated Gradient-Based Energy Recovery and Storage System**  
 **Inventor & Author:** Abdullah Al Rafi [BD]  
