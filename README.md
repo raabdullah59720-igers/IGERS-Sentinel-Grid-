@@ -2,7 +2,7 @@
 
 **Integrated Gradient-Based Energy Recovery and Storage System**
 
-Inventor & Author: **Abdullah Al Rafi [BD]**  
+Inventor & Author: **Abdullah Al Rafi[BD]**  
 Concept / Invention Date: **14 August 2026**
 
 A professional conceptual web-app front end for the IGERS-BD-01 project. It deliberately avoids locking the identity to a single turbine or water-only implementation. The site presents IGERS as a modular energy-recovery and storage platform with example deployment models.
