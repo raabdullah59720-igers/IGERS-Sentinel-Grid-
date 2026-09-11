@@ -1,44 +1,101 @@
-import React,{useState} from 'react';
-import {createRoot} from 'react-dom/client';
-import {ArrowRight,Activity,BatteryCharging,BrainCircuit,ChevronDown,Droplets,Gauge,Leaf,Menu,Move3d,Route,ShieldCheck,Sun,Waves,Wind,X,Zap} from 'lucide-react';
+import React, { useMemo, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Activity, BatteryCharging, Boxes, Cpu, Gauge, Layers3, Menu, Network, Play, ShieldCheck, Sparkles, Sun, X, Zap } from 'lucide-react';
 import './styles.css';
 
-const nav=[['HOME','home'],['WHAT IS IGERS?','what'],['ENERGY SOURCES','sources'],['SYSTEM','system'],['APPLICATIONS','applications'],['NETWORK','network'],['RESEARCH','research'],['DEPLOYMENT','deployment'],['FUTURE','future'],['INVENTOR','inventor'],['DOCUMENTS','documents'],['CONTACT','contact']];
-const src=[
- ['Vehicle Movement','Mechanical energy associated with moving vehicles.','Moving mass → suitable recovery → conversion',Route],
- ['Braking / Deceleration','Recovery opportunities during controlled deceleration.','Deceleration → mechanical interface → generator',Zap],
- ['Elevation Change','Potential energy associated with movement through elevation differences.','Elevation → controlled descent → conversion',Move3d],
- ['Controlled Water Flow','Hydraulic recovery where technically appropriate.','Flow → turbine / hydraulic mechanism → generator',Droplets],
- ['Vibration','Small-scale recovery from suitable infrastructure vibration.','Vibration → transducer → conditioning',Waves],
- ['Footstep / Human Movement','Low-power recovery for high-footfall environments.','Movement → deformation → conversion',Activity],
- ['Airflow','Potential recovery from suitable airflow conditions.','Airflow → aerodynamic mechanism → conversion',Wind],
- ['Solar Support','Complementary source for hybrid recovery nodes.','Sunlight → PV → conditioning',Sun]
+const models = [
+  { key:'hydro', name:'Hydro Recovery', note:'Flow-gradient energy recovery concept', icon:Activity, metric:'Adaptive flow', value:'Variable' },
+  { key:'road', name:'Roadside Harvesting', note:'Distributed micro-generation layer', icon:Network, metric:'Deployment', value:'Scalable' },
+  { key:'utility', name:'Utility Infrastructure', note:'Pole and tower energy-harvesting concept', icon:Layers3, metric:'Network', value:'Distributed' },
+  { key:'hybrid', name:'Hybrid IGERS Node', note:'Recovery + storage + control in one node', icon:Boxes, metric:'Architecture', value:'Modular' }
 ];
-const cards=[
- ['ROADS','Moving vehicles, controlled braking, junctions, elevation changes, bridge approaches and roadside hybrid nodes.',Route],
- ['BRIDGES / FLYOVERS','Approach zones, elevation differences, structural vibration, pedestrian movement and local storage.',Move3d],
- ['HYDRAULIC & FLOW','One possible IGERS pathway: flow → turbine/hydraulic mechanism → generator → storage → local load.',Droplets],
- ['VIBRATION & FOOTSTEP','Small-scale supplementary recovery for sensors, indicators and low-power applications.',Waves],
- ['HYBRID SOLAR NODES','Solar + recovery + storage + control for intermittent recovery environments.',Sun],
- ['LOCAL LOADS','Road lighting, signs, sensors, traffic systems, monitoring and suitable nearby loads.',Zap]
-];
-function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
-function Header(){const [open,setOpen]=useState(false);return <header className="header"><div className="bar"><button className="brand" onClick={()=>go('home')}><strong>IGERS</strong><span>BD-01</span></button><button className="mobile" onClick={()=>setOpen(!open)} aria-label="menu">{open?<X/>:<Menu/>}</button><nav className={open?'nav open':'nav'}>{nav.map(([t,id])=><button key={id} onClick={()=>{go(id);setOpen(false)}}>{t}</button>)}</nav></div></header>}
-function Title({k,h,p}){return <div className="title"><div className="eyebrow">{k}</div><h2>{h}</h2>{p&&<p>{p}</p>}</div>}
-function Flow(){const steps=[['ENERGY SOURCE','Motion • flow • elevation • vibration • sunlight',Activity],['RECOVERY','Capture a suitable portion safely',Waves],['CONVERSION','Mechanical / hydraulic → electrical',Zap],['CONDITIONING','Rectify • regulate • protect',Gauge],['STORAGE','Battery or suitable storage',BatteryCharging],['CONTROL','Route according to supply and demand',BrainCircuit],['LOCAL LOAD','Lighting • sensors • signs • monitoring',Route]];return <div className="flow">{steps.map(([a,b,I],i)=><React.Fragment key={a}><div className="fstep"><I/><b>{a}</b><small>{b}</small></div>{i<steps.length-1&&<ArrowRight className="arrow"/>}</React.Fragment>)}</div>}
-function Hero(){return <section id="home" className="hero"><div className="heroText"><div className="eyebrow">INTEGRATED ENERGY RECOVERY • BANGLADESH</div><h1>Energy is moving everywhere.<em>IGERS asks what can be recovered.</em></h1><p>IGERS-BD-01 is an integrated concept for exploring distributed recovery of otherwise underutilized mechanical and environmental energy across transportation, infrastructure and selected environmental systems.</p><div className="actions"><button className="primary" onClick={()=>go('what')}>Explore IGERS <ArrowRight/></button><button className="secondary" onClick={()=>go('system')}>How the system works</button></div><div className="signature"><b>IGERS-BD-01</b><span>Inventor & Author · Abdullah Al Rafi [BD]</span></div></div><div className="heroNet"><div className="ring r1"/><div className="ring r2"/><div className="ring r3"/><div className="core"><b>IGERS</b><span>BD-01</span><small>RECOVERY NETWORK</small></div>{['ROAD','BRIDGE','FLOW','VIBRATION','AIR','SOLAR','LOCAL LOAD'].map((x,i)=><div className={'hnode n'+i} key={x}><i/>{x}</div>)}</div></section>}
-function App(){const [active,setActive]=useState(0);return <><Header/><main>
-<Hero/>
-<section id="what" className="section cream"><Title k="01 / THE CONCEPT" h="What is IGERS?" p="A beginner-friendly framework for looking at existing infrastructure through an energy-recovery lens."/><div className="twocol"><div><span className="label">IGERS IN ONE SENTENCE</span><h3 className="big">IGERS is a system concept that looks for energy being lost or underutilized in existing infrastructure and explores whether suitable portions can be recovered, converted, stored and locally used.</h3></div><div className="explain"><p>Instead of asking <b>“Where can we build another power plant?”</b>, IGERS explores another question:</p><div className="question">“Where is useful energy already moving through the infrastructure around us?”</div><p>IGERS is technology-agnostic. A water-flow mechanism is only one possible component within the larger concept.</p></div></div><div className="compare"><div><span>CONVENTIONAL THINKING</span><b>Centralized generation</b><small>→ transmission → distribution → load</small></div><i>VS</i><div className="featured"><span>IGERS CONCEPT</span><b>Multiple local recovery points</b><small>→ conversion → storage/control → nearby loads</small></div></div></section>
-<section id="sources" className="section dark"><Title k="02 / ENERGY SOURCES" h="Where can energy come from?" p="Each source is a separate engineering opportunity. Suitability, safety and economics must be demonstrated site by site."/><div className="sourceLayout"><div className="sourceList">{src.map(([t,d,path,I],i)=><button className={'source '+(i===active?'active':'')} key={t} onClick={()=>setActive(i)}><span>0{i+1}</span><div><b>{t}</b><small>{d}</small></div><ArrowRight/></button>)}</div><div className="detail"><div className="detailIcon">{React.createElement(src[active][3])}</div><div className="eyebrow">SELECTED PATHWAY</div><h3>{src[active][0]}</h3><p>{src[active][1]}</p><div className="path">{src[active][2]}</div><small className="note">Conceptual pathway only. Output depends on site conditions, recovery mechanism, conversion efficiency, losses, structural constraints, maintenance, safety and economics.</small></div></div></section>
-<section id="system" className="section cream"><Title k="03 / SYSTEM ARCHITECTURE" h="The IGERS energy journey" p="Different recovery sources can enter a common conversion, storage and control logic."/><Flow/><div className="reality"><div><span>ENGINEERING REALITY</span><h3>Available Energy ≠ Recoverable Energy</h3></div><div><b>Net Useful Energy ≈ Available Energy × Recovery Efficiency × Conversion Efficiency × Storage/Delivery Efficiency − Associated Penalties</b><small>Conceptual engineering relationship, not a universal final equation.</small></div></div></section>
-<section id="applications" className="section charcoal"><Title k="04 / APPLICATIONS" h="Infrastructure becomes a platform for investigation."/><div className="appgrid">{cards.map(([t,d,I])=><article key={t}><I/><h3>{t}</h3><p>{d}</p></article>)}</div><div className="warning"><ShieldCheck/><div><b>Engineering constraint first.</b><p>A bridge, road or waterway is not automatically an energy source. Only technically suitable pathways should be considered, with safety, structural integrity, traffic behavior, energy penalties and lifecycle cost evaluated.</p></div></div></section>
-<section id="network" className="section dark"><Title k="05 / IGERS NETWORK" h="Not one machine. A network of recovery nodes." p="Different recovery technologies can operate under one conceptual system architecture."/><div className="network"><div className="netCore"><b>IGERS</b><small>NETWORK LAYER</small></div>{['ROAD','BRIDGE','WATER','VIBRATION','SOLAR','PEDESTRIAN','INFRA'].map((x,i)=><div className={'mnode m'+i} key={x}><i/>{x} NODE</div>)}<div className="box store"><BatteryCharging/> STORAGE / CONTROL</div><div className="box load"><Zap/> LOCAL APPLICATIONS</div></div><div className="layers"><div><span>PRIMARY</span><b>Energy / Infrastructure Network</b><p>Recovery, conversion, storage, routing and essential infrastructure functions.</p></div><div><span>SECONDARY</span><b>Information / Support Network</b><p>Monitoring, environmental data, diagnostics, weather information and public-facing information.</p></div></div></section>
-<section id="research" className="section cream"><Title k="06 / RESEARCH" h="From observation to engineering" p="IGERS is a developing concept. Evidence must lead the deployment."/><div className="timeline">{[['01','OBSERVATION','Identify energy movement or loss.'],['02','CONCEPT','Define a suitable recovery opportunity.'],['03','MODELLING','Estimate available and recoverable energy.'],['04','PROTOTYPE','Build and test the mechanism.'],['05','VALIDATION','Compare theory with real performance.'],['06','OPTIMIZATION','Improve efficiency, durability and safety.'],['07','PILOT','Test selected real locations.'],['08','SCALE','Expand only when evidence supports it.']].map(x=><div key={x[0]}><span>{x[0]}</span><b>{x[1]}</b><p>{x[2]}</p></div>)}</div><div className="feas"><h3>Where does IGERS make sense?</h3><div>{['Technical feasibility','Structural feasibility','Energy feasibility','Economic feasibility','Operational feasibility','Environmental feasibility','Social feasibility'].map(x=><span key={x}><Gauge/>{x}</span>)}</div><strong>GO → PILOT → MEASURE → OPTIMIZE → SCALE</strong></div></section>
-<section id="deployment" className="section sand"><Title k="07 / DEPLOYMENT" h="Site-selected expansion" p="A conceptual deployment pathway, not a claim of existing nationwide implementation."/><div className="deploy">{[['STAGE 01','Small pilot sites','Measure real performance under controlled conditions.'],['STAGE 02','Infrastructure clusters','Connect selected compatible recovery nodes.'],['STAGE 03','Regional network','Scale where evidence supports value.'],['STAGE 04','Evidence-based expansion','Wider deployment only after validation.']].map(x=><div key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>)}</div></section>
-<section id="future" className="section dark"><Title k="08 / FUTURE RESEARCH" h="Where could IGERS go?"/><div className="future">{['Smart infrastructure','Sensor-integrated recovery nodes','AI-assisted monitoring','Predictive maintenance','Digital twin modelling','Hybrid solar + recovery nodes','Distributed storage','EV ecosystem support','Intelligent infrastructure networks','Climate-resilient infrastructure','Autonomous monitoring','Data-driven site selection'].map(x=><div key={x}><b>+</b>{x}<small>FUTURE RESEARCH POSSIBILITY</small></div>)}</div></section>
-<section id="inventor" className="section inventor"><div className="inventorCard"><div className="avatar">AR</div><div><div className="eyebrow">INVENTOR & AUTHOR</div><h2>Abdullah Al Rafi <span>[BD]</span></h2><p className="date">Concept / Invention Date · 14 August 2026</p><blockquote>“IGERS did not begin as an attempt to create energy from nowhere. It began with a simple question: how much useful energy is continuously passing through our roads, transportation systems, infrastructure, water movement, elevation changes, vibration, airflow and everyday human activity without being utilized?”</blockquote><p>IGERS-BD-01 is my attempt to bring these different possibilities under one integrated concept. The idea is not to depend on a single technology or a single recovery point. Instead, it explores a distributed approach where suitable locations can recover mechanical or environmental energy, convert it into electrical energy, store it, and use it for appropriate local applications.</p><p className="quoteEnd">“What if some of the energy we normally lose could be recovered and used where it is needed?”</p><b>— Abdullah Al Rafi [BD]</b></div></div></section>
-<section id="documents" className="section cream"><Title k="09 / DOCUMENTS" h="Project knowledge base" p="A structured place for future engineering reports, prototypes, calculations and validation records."/><div className="docs">{[['Concept Overview',Zap,'System definition and architecture'],['Prototype Studies',Move3d,'Mechanical and visual development'],['Feasibility Reports',Gauge,'Site, energy and economic analysis'],['Validation Data',Activity,'Measured results and pilot evidence']].map(([t,I,d])=><div key={t}><I/><b>{t}</b><span>{d}</span></div>)}</div></section>
-<section id="contact" className="final"><div><div className="eyebrow">IGERS-BD-01</div><h2>Not a single machine.<em>A framework for looking at infrastructure differently.</em></h2><p>Motion. Elevation. Flow. Vibration. Airflow. Sunlight.</p><div className="finalflow">RECOVERY <ArrowRight/> CONVERSION <ArrowRight/> STORAGE <ArrowRight/> LOCAL USE <ArrowRight/> SMARTER INFRASTRUCTURE</div><small>Inventor & Author — <b>Abdullah Al Rafi [BD]</b><br/>14 August 2026</small></div></section>
-</main><footer><b>IGERS-BD-01</b><span>Integrated Gradient-Based Energy Recovery and Storage System</span><span>Conceptual engineering platform</span></footer></>}
+
+function App(){
+  const [active, setActive] = useState('hydro');
+  const [menu, setMenu] = useState(false);
+  const [demo, setDemo] = useState(false);
+  const selected = useMemo(()=>models.find(m=>m.key===active) || models[0],[active]);
+
+  return <div className="app">
+    <header className="topbar">
+      <div className="brand" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}>
+        <div className="brandMark"><Zap size={19}/></div>
+        <div><strong>IGERS</strong><span>BD-01</span></div>
+      </div>
+      <nav className={menu ? 'nav open':'nav'}>
+        <a href="#overview" onClick={()=>setMenu(false)}>Overview</a>
+        <a href="#models" onClick={()=>setMenu(false)}>Models</a>
+        <a href="#system" onClick={()=>setMenu(false)}>System</a>
+        <a href="#inventor" onClick={()=>setMenu(false)}>Inventor</a>
+      </nav>
+      <button className="menuBtn" onClick={()=>setMenu(v=>!v)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
+    </header>
+
+    <main>
+      <section className="hero" id="overview">
+        <div className="heroGlow glow1"/><div className="heroGlow glow2"/>
+        <div className="heroCopy">
+          <div className="eyebrow"><span className="dot"/> Integrated Energy Intelligence</div>
+          <h1>IGERS<span>-BD-01</span></h1>
+          <p className="subtitle">Integrated Gradient-Based Energy Recovery and Storage System</p>
+          <p className="lead">A conceptual engineering platform for capturing usable energy from distributed gradients, converting it through controllable modules, and routing the output into storage and intelligent power-management layers.</p>
+          <div className="actions">
+            <button className="primary" onClick={()=>setDemo(true)}><Play size={18} fill="currentColor"/> Run concept demo</button>
+            <a className="secondary" href="#models">Explore models <span>↗</span></a>
+          </div>
+          <div className="identityStrip">
+            <div><span>Inventor &amp; Author</span><strong>Abdullah Al Rafi [BD]</strong></div>
+            <div><span>Concept / Invention Date</span><strong>14 August 2026</strong></div>
+          </div>
+        </div>
+        <div className="heroVisual" aria-label="Conceptual system graphic">
+          <div className="orbital orbitA"/><div className="orbital orbitB"/>
+          <div className="core"><div className="coreRing"><Zap size={42}/></div><span>IGERS</span><small>CORE NODE</small></div>
+          {[['N1',12,8],['N2',-8,68],['N3',58,78],['N4',80,25]].map(([n,x,y])=><div className="node" style={{left:x+'%',top:y+'%'}} key={n}><span>{n}</span></div>)}
+          <div className="energyLine l1"/><div className="energyLine l2"/><div className="energyLine l3"/>
+          <div className="visualLabel labelTop"><Cpu size={15}/> CONTROL LAYER</div>
+          <div className="visualLabel labelBottom"><BatteryCharging size={15}/> STORAGE LAYER</div>
+        </div>
+      </section>
+
+      <section className="statsGrid">
+        <Stat icon={Gauge} label="System state" value="CONCEPTUAL" />
+        <Stat icon={Zap} label="Architecture" value="MODULAR" />
+        <Stat icon={BatteryCharging} label="Energy path" value="RECOVER → STORE" />
+        <Stat icon={ShieldCheck} label="Design intent" value="SCALABLE" />
+      </section>
+
+      <section className="section" id="models">
+        <div className="sectionHead"><div><p className="kicker">CONCEPT LIBRARY</p><h2>One platform, multiple deployment models.</h2></div><p className="sectionNote">Select a module to preview its role in the IGERS architecture.</p></div>
+        <div className="modelGrid">
+          {models.map(m=>{const I=m.icon; return <button className={active===m.key?'modelCard active':'modelCard'} key={m.key} onClick={()=>setActive(m.key)}>
+            <div className="cardIcon"><I size={22}/></div><div className="cardText"><h3>{m.name}</h3><p>{m.note}</p></div><span className="arrow">↗</span>
+          </button>})}
+        </div>
+        <div className="modulePanel">
+          <div className="panelVisual"><div className="pulse"/><div className="moduleCore"><selected.icon size={34}/></div><div className="modulePath"><span/><span/><span/><span/></div></div>
+          <div className="panelCopy"><div className="miniTag">ACTIVE MODULE</div><h3>{selected.name}</h3><p>{selected.note}. The interface is intentionally conceptual, giving future prototypes, engineering calculations, simulation results, and field imagery a clean place to live without locking the project into a single physical implementation.</p><div className="metricRow"><div><span>{selected.metric}</span><strong>{selected.value}</strong></div><div><span>Control</span><strong>Adaptive</strong></div><div><span>Storage</span><strong>Ready</strong></div></div></div>
+        </div>
+      </section>
+
+      <section className="section darkSection" id="system">
+        <div className="sectionHead"><div><p className="kicker">SYSTEM ARCHITECTURE</p><h2>Recover. Convert. Store. Orchestrate.</h2></div><p className="sectionNote">A clean conceptual pipeline for future engineering validation.</p></div>
+        <div className="pipeline">
+          {['Energy Source','Recovery Module','Power Conditioning','Storage','Intelligent Control'].map((x,i)=><React.Fragment key={x}><div className="step"><span>0{i+1}</span><h3>{x}</h3><p>{['Available gradient or distributed source','Mechanical or electro-mechanical capture','Voltage regulation and protection','Battery or other storage interface','Monitoring, routing and optimization'][i]}</p></div>{i<4&&<div className="connector">→</div>}</React.Fragment>)}
+        </div>
+      </section>
+
+      <section className="section inventor" id="inventor">
+        <div className="inventorCard"><div className="seal"><Sparkles size={25}/><span>IGERS</span><small>BD-01</small></div><div><p className="kicker">PROJECT IDENTITY</p><h2>Abdullah Al Rafi <span>[BD]</span></h2><p>Inventor &amp; Author of the IGERS-BD-01 concept. This digital platform is designed as a professional front end for research documentation, conceptual prototypes, engineering studies, simulations, and future validated deployment data.</p><div className="tags"><span>Engineering Concept</span><span>Energy Recovery</span><span>Storage</span><span>Bangladesh</span></div></div></div>
+      </section>
+    </main>
+
+    <footer><div><strong>IGERS-BD-01</strong><span> Integrated Gradient-Based Energy Recovery and Storage System</span></div><div>Concept / Invention Date: 14 August 2026</div></footer>
+
+    {demo && <div className="modal" onClick={()=>setDemo(false)}><div className="modalCard" onClick={e=>e.stopPropagation()}><button className="close" onClick={()=>setDemo(false)}><X/></button><div className="demoIcon"><Activity size={28}/></div><p className="kicker">CONCEPT DEMO</p><h2>Energy path online</h2><p>This demo is visual only. Replace these placeholders later with measured values, CFD/FEA outputs, sensor data, efficiency curves, and storage performance.</p><div className="demoReadouts"><div><span>Recovery</span><strong>ACTIVE</strong></div><div><span>Conditioning</span><strong>STABLE</strong></div><div><span>Storage</span><strong>READY</strong></div></div></div></div>}
+  </div>
+}
+
+function Stat({icon:Icon,label,value}){return <div className="stat"><div className="statIcon"><Icon size={18}/></div><div><span>{label}</span><strong>{value}</strong></div></div>}
+
 createRoot(document.getElementById('root')).render(<App/>);
