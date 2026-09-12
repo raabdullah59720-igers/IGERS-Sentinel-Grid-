@@ -1,41 +1,24 @@
-# IGERS-POWERCORE Final Safe Visual Enhancer
+# IGERS-BD-01 Magazine Integration | Developer Package
 
-This is a **visual-only, drop-in enhancement** for the existing IGERS-POWERCORE static website.
+This package integrates the Library magazine into the existing IGERS POWERCORE static website without external viewer dependencies.
 
-## What this version does
+## Contents
+- magazine/index.html: responsive magazine page
+- magazine/styles.css: responsive styling
+- magazine/IGERS-BD-01-Professional-Engineering-Magazine.pdf: 70-page A4 magazine
+- integration/magazine-section.html: homepage card
+- integration/magazine.css: homepage card styling
 
-- Adds a clearly visible Bangladesh national-flag visual to the existing first hero section (`#home.hero`).
-- Adds a small Bangladesh flag identity mark beside the existing `.brand` element when that element exists.
-- Adds a tiny non-blocking `IGERS LIVE` badge.
-- Uses only enhancer-owned scoped CSS selectors.
-- Embeds the flag as SVG data, so there is no external flag file path to break.
-- Uses `pointer-events:none` on the decorative layers so they cannot block clicks.
+## Deploy
+Copy the `magazine/` folder into the existing repository root. The public page becomes `/IGERS-POWERCORE/magazine/`.
 
-## What this version deliberately does NOT do
+Add the markup from `integration/magazine-section.html` to the existing homepage and its CSS to the existing stylesheet. Do not replace the existing index or application files.
 
-It does **not** create duplicate Weather, Environment, Earthquake, Air Traffic, or clock API polling.
+## Source identity
+Project: IGERS-BD-01
+Author / Inventor: Abdullah Al Rafi [BD]
+Publication: 09 September 2026
+Edition: 2026 Professional Thesis & Engineering Concept Edition
 
-The existing IGERS website already contains its own live-data logic. Keeping that logic as the single source avoids duplicate requests, provider rate limits, race conditions, overwritten DOM values, and other integration bugs.
-
-Therefore, this enhancer does not replace or delete `index.html`, `script.js`, `style.css`, `styles.css`, or any existing inline scripts.
-
-## Install
-
-Upload `igers-live-enhancer.js` to the repository root and add exactly this line immediately before `</body>` in `index.html`:
-
-```html
-<script src="igers-live-enhancer.js"></script>
-```
-
-Do not remove existing scripts or styles.
-
-## Safety checks performed
-
-- JavaScript syntax checked with Node.js.
-- ZIP archive integrity checked with `unzip -t`.
-- No network `fetch()` calls in the enhancer.
-- No `setInterval()` or `setTimeout()` polling loops in the enhancer.
-- No global `button`, `a`, `header`, `nav`, `section`, `.card`, `.panel`, or `.live` selectors.
-- No `overflow:hidden` rule.
-- No existing DOM section is replaced.
-- Decorative flag layers do not receive pointer events.
+## QA
+The PDF is bundled locally, so the viewer does not depend on an external document host. Browser-native PDF rendering provides zoom, page navigation and printing. A direct Open PDF and Download action are included for compatibility.
