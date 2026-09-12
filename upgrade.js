@@ -1,11 +1,5 @@
-/* Non-destructive UI polish. No data feeds are replaced and no existing section is removed. */
+/* IGERS-BD-01 final visual enhancement hook.
+   Deliberately makes no DOM changes and touches no data/feed logic. */
 (() => {
-  const mark = () => {
-    document.documentElement.classList.add('igers-visual-upgrade');
-    document.querySelectorAll('a,button').forEach(el => {
-      const t=(el.textContent||'').trim().toLowerCase();
-      if(/air traffic|weather|earthquake|live time|inventor|sentinel|deployment|concept|energy|environment/.test(t)) el.classList.add('igers-nav-item');
-    });
-  };
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',mark); else mark();
+  document.documentElement.classList.add('igers-visual-upgrade');
 })();

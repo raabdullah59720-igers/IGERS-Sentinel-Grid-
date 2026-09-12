@@ -1,36 +1,114 @@
-/* IGERS-BD-01 visual upgrade layer
-   Designed as a non-destructive style overlay for the existing page. */
+/* IGERS-BD-01 FINAL visual enhancement layer
+   Scope: presentation only. No API/feed/data logic is touched.
+   Intentionally avoids generic component selectors that can change existing widgets.
+*/
+
 :root{
-  --igers-bg:#06101c;--igers-surface:rgba(10,24,40,.82);--igers-surface-2:rgba(15,33,52,.72);
-  --igers-line:rgba(147,191,224,.14);--igers-text:#eef7ff;--igers-muted:#8ea7bd;
-  --igers-accent:#56d8bb;--igers-accent-2:#7fc8ff;--igers-shadow:0 18px 50px rgba(0,0,0,.28);
-  --igers-radius:18px;
+  --igers-vg-bg:#06101c;
+  --igers-vg-accent:#56d8bb;
+  --igers-vg-line:rgba(147,191,224,.14);
 }
-html{scroll-behavior:smooth}
+
+/* Background-only identity treatment. Does not create an overlay element,
+   change stacking order, or intercept pointer events. */
+html{
+  scroll-behavior:smooth;
+  background:var(--igers-vg-bg);
+}
+
 body{
-  color:var(--igers-text)!important;
-  background:radial-gradient(circle at 15% 0%,rgba(70,127,190,.16),transparent 30%),linear-gradient(155deg,#06101c 0%,#091725 45%,#06101b 100%)!important;
+  background-color:var(--igers-vg-bg) !important;
+  background-image:
+    radial-gradient(circle at 50% 150px, rgba(222,41,57,.30) 0 58px, rgba(222,41,57,.13) 59px, transparent 112px),
+    linear-gradient(180deg, rgba(0,106,78,.34) 0 300px, rgba(0,106,78,.10) 390px, transparent 560px),
+    radial-gradient(circle at 15% 0%, rgba(70,127,190,.12), transparent 30%),
+    linear-gradient(155deg,#06101c 0%,#091725 45%,#06101b 100%) !important;
 }
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px}
-header,nav,.nav,.navbar,.topbar{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-nav a,.nav a,.navbar a{transition:all .22s ease;border-radius:10px!important}
-nav a:hover,.nav a:hover,.navbar a:hover{background:rgba(86,216,187,.09)!important;color:var(--igers-accent)!important;transform:translateY(-1px)}
-section,article,.card,.panel,.tile,.glass,.feature,.stat,.stat-card,.info-card,.control-card{
-  border-color:var(--igers-line)!important;border-radius:var(--igers-radius)!important;
-  box-shadow:var(--igers-shadow);background:var(--igers-surface)!important;
+
+/* Navigation polish: scoped by actual navigation elements, but does not alter
+   layout, positioning, stacking, or content. */
+nav a,
+.nav a,
+.navbar a{
+  transition:background-color .22s ease,color .22s ease,border-color .22s ease;
+  border-radius:10px;
 }
-section{position:relative}
-section::after{content:"";position:absolute;inset:auto 8% 0;height:1px;background:linear-gradient(90deg,transparent,var(--igers-accent),transparent);opacity:.22}
-h1,h2,h3{letter-spacing:-.02em;color:#f4f9ff!important}
-p,small,.muted,.subtitle,.meta{color:var(--igers-muted)}
-button,.btn,a.button{transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important}
-button:hover,.btn:hover,a.button:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2)}
-input,select,textarea{background:rgba(255,255,255,.025)!important;color:var(--igers-text)!important;border-color:var(--igers-line)!important;border-radius:12px!important}
-/* Live indicator polish: intentionally scoped to common status classes only. */
-.live,.status-live,.live-indicator,.status-indicator{ }
-/* Air-traffic / map surfaces */
-#air-traffic,#airtraffic,#airTraffic{background:linear-gradient(145deg,rgba(7,23,38,.95),rgba(9,31,48,.84))!important}
-.leaflet-container{border-radius:16px}
-/* Data readouts */
-[data-value],.value,.metric,.number{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-@media(max-width:900px){section{border-radius:15px!important}.app,.container,.wrapper{padding-left:14px!important;padding-right:14px!important}}
+
+nav a:hover,
+.nav a:hover,
+.navbar a:hover{
+  background-color:rgba(86,216,187,.09);
+  color:var(--igers-vg-accent);
+}
+
+/* Form controls: visual-only, preserving dimensions and interaction. */
+input,
+select,
+textarea{
+  border-color:var(--igers-vg-line);
+  border-radius:10px;
+}
+
+/* Map polish only when Leaflet is already present. */
+.leaflet-container{
+  border-radius:16px;
+}
+
+@media (max-width:900px){
+  body{
+    background-image:
+      radial-gradient(circle at 50% 115px, rgba(222,41,57,.27) 0 46px, rgba(222,41,57,.11) 47px, transparent 94px),
+      linear-gradient(180deg, rgba(0,106,78,.29) 0 270px, rgba(0,106,78,.08) 355px, transparent 500px),
+      radial-gradient(circle at 15% 0%, rgba(70,127,190,.10), transparent 30%),
+      linear-gradient(155deg,#06101c 0%,#091725 45%,#06101b 100%) !important;
+  }
+}
+
+
+/* === Bangladesh identity hero treatment ===
+   Safe presentation-only layer. Pointer events are disabled and no existing
+   page content, feed, map, form behavior, or data logic is altered. */
+body{
+  position:relative;
+  min-height:100vh;
+  isolation:isolate;
+  background-color:#06101c !important;
+  background-image:
+    linear-gradient(180deg,rgba(6,16,28,.72) 0%,rgba(6,16,28,.88) 52%,rgba(6,16,28,1) 100%),
+    url('./bangladesh-flag-overlay.svg') !important;
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:100% 720px,100% 720px;
+}
+
+/* Visible flag layer at the top of the landing page. */
+body::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:min(720px,100vh);
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    linear-gradient(180deg,rgba(0,30,22,.12),rgba(6,16,28,.42)),
+    url('./bangladesh-flag-overlay.svg');
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:100% 100%,100% 100%;
+  opacity:.72;
+}
+
+/* Keep the flag tasteful on smaller screens while retaining the national
+   identity mark clearly in the first viewport. */
+@media (max-width:900px){
+  body{
+    background-size:cover,auto 560px;
+    background-position:center top;
+  }
+  body::before{
+    height:560px;
+    background-size:cover,auto 560px;
+  }
+}

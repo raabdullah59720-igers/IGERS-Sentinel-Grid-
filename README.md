@@ -1,46 +1,58 @@
-# IGERS-BD-01 Graphics Upgrade Pack
+# IGERS-BD-01 Graphics Upgrade - Final Safe Build
 
-This is a non-destructive visual layer for the current IGERS-POWERCORE GitHub Pages site.
+This package is a presentation-only layer for the existing IGERS-POWERCORE website.
 
-## What it changes
+## Safety changes
 
-- premium dark engineering dashboard styling
-- sharper cards/panels and spacing
-- better hover states and navigation polish
-- subtle grid/lighting background
-- improved map/air-traffic surface treatment
-- responsive mobile refinements
-- preserves existing text, sections, data feeds and interactions
+- No API or data-feed code is included or modified.
+- No existing section is added, removed, renamed, or reordered.
+- No `body > *` stacking/z-index rules.
+- No global `header/nav/topbar` backdrop/filter rules.
+- No global button/link transform rules.
+- No global `section { overflow:hidden }` rule.
+- No broad `.live`, `.status-live`, `.value`, `.number`, `.card`, or `.panel` selectors.
+- JavaScript does not query or rewrite existing links, buttons, maps, cards, or feeds.
+- JavaScript only adds one harmless document class for future scoped styling.
+- Bangladesh-inspired background is implemented only as a body background layer.
+
+## Included files
+
+- `upgrade.css` - visual styling layer
+- `upgrade.js` - harmless visual hook
 
 ## Install
 
-Add these two files to the repository:
+In the existing repository:
 
-- `upgrade.css`
-- `upgrade.js`
-
-Then, inside `<head>` after the existing CSS files, add:
+1. Upload `upgrade.css` to the repository root.
+2. In `<head>` after the site's current stylesheet(s), add:
 
 ```html
 <link rel="stylesheet" href="upgrade.css">
 ```
 
-Before `</body>`, add:
+3. Upload `upgrade.js` to the repository root.
+4. Before `</body>`, add:
 
 ```html
 <script src="upgrade.js"></script>
 ```
 
-The current live page was reviewed first. Its major sections include Concept, Energy, Journey, Environment, Applications, Sentinel Grid, Deployment, Live Time, Air Traffic, Weather and Inventor, and the visual layer is intended to leave those sections intact.
+## Validation performed
 
-## Validation
+- JavaScript syntax check: pass
+- CSS curly-brace balance: pass
+- CSS parenthesis balance: pass
+- ZIP archive integrity: pass
+- Static review for unsafe global selectors: pass
 
-- No JavaScript syntax changes to application/data logic
-- No API endpoints changed
-- Removed broad `[class*=live]` matching that could restyle unrelated widgets
-- Removed global `section { overflow:hidden }` to prevent clipping dropdowns, maps and positioned UI
-- Air-traffic visual targeting is now limited to known container IDs
+## Important
 
-## Safety
+This pack intentionally does not attempt to repair or replace existing live weather, earthquake, time, or air-traffic providers. It only improves presentation while leaving those systems under the original website code.
 
-This pack does not replace the site's air-traffic API, weather feed, earthquake feed, time engine, or content. It is CSS/JS presentation only.
+
+## Bangladesh flag visual
+The package includes `bangladesh-flag-overlay.svg`. It is used only as a top-level visual background layer for the landing/first viewport. It does not replace HTML content or modify live-data logic.
+
+## Safe integration
+Load `upgrade.css` after the site's existing stylesheet. Load `upgrade.js` after the existing page scripts or at the end of the body. Do not remove the site's current CSS or JavaScript files.
