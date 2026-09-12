@@ -1,20 +1,46 @@
-# IGERS-BD-01 Live Air Traffic Professional Update v2
+# IGERS-BD-01 Graphics Upgrade Pack
 
-This update preserves the existing IGERS-BD-01 website sections and improves the Air Traffic panel.
+This is a non-destructive visual layer for the current IGERS-POWERCORE GitHub Pages site.
 
-## Improvements
-- Uses the maintained Airplanes.live live map as the primary aircraft map.
-- Centers the live map on Bangladesh and provides a clean, stable full-panel map view.
-- Keeps aircraft count, positioned-aircraft count, data age, aircraft list and selected-aircraft details.
-- Refreshes the lightweight aircraft data feed every 20 seconds while the page is visible.
-- Retries in the background every 60 seconds and refreshes immediately when the tab becomes visible again.
-- Keeps the previous earthquake, weather, environment, time and IGERS sections intact.
-- No fabricated aircraft positions are added when live data is unavailable.
+## What it changes
 
-## Deployment
-Upload the contents of `igers_site_build/` to GitHub Pages or another HTTPS static host.
+- premium dark engineering dashboard styling
+- sharper cards/panels and spacing
+- better hover states and navigation polish
+- subtle grid/lighting background
+- improved map/air-traffic surface treatment
+- responsive mobile refinements
+- preserves existing text, sections, data feeds and interactions
 
-## Data notes
-The visual live map is provided by Airplanes.live, a community ADS-B/MLAT aggregation service. Coverage depends on receiver availability and aircraft visibility. The site's own summary/list feed depends on the public API being reachable from the visitor's browser/network.
+## Install
 
-Official source: https://airplanes.live/
+Add these two files to the repository:
+
+- `upgrade.css`
+- `upgrade.js`
+
+Then, inside `<head>` after the existing CSS files, add:
+
+```html
+<link rel="stylesheet" href="upgrade.css">
+```
+
+Before `</body>`, add:
+
+```html
+<script src="upgrade.js"></script>
+```
+
+The current live page was reviewed first. Its major sections include Concept, Energy, Journey, Environment, Applications, Sentinel Grid, Deployment, Live Time, Air Traffic, Weather and Inventor, and the visual layer is intended to leave those sections intact.
+
+## Validation
+
+- No JavaScript syntax changes to application/data logic
+- No API endpoints changed
+- Removed broad `[class*=live]` matching that could restyle unrelated widgets
+- Removed global `section { overflow:hidden }` to prevent clipping dropdowns, maps and positioned UI
+- Air-traffic visual targeting is now limited to known container IDs
+
+## Safety
+
+This pack does not replace the site's air-traffic API, weather feed, earthquake feed, time engine, or content. It is CSS/JS presentation only.
