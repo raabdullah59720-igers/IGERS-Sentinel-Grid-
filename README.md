@@ -3,11 +3,11 @@
 This package integrates the Library magazine into the existing IGERS POWERCORE static website without external viewer dependencies.
 
 ## Contents
-- magazine/index.html: responsive magazine page
-- magazine/styles.css: responsive styling
-- magazine/IGERS-BD-01-Professional-Engineering-Magazine.pdf: 70-page A4 magazine
-- integration/magazine-section.html: homepage card
-- integration/magazine.css: homepage card styling
+#magazine/index.html: responsive magazine page
+#magazine/styles.css: responsive styling
+#magazine/IGERS-BD-01-Professional-Engineering-Magazine.pdf: 70-page A4 magazine
+#integration/magazine-section.html: homepage card
+#integration/magazine.css: homepage card styling
 
 ## Deploy
 Copy the `magazine/` folder into the existing repository root. The public page becomes `/IGERS-POWERCORE/magazine/`.
